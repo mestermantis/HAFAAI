@@ -721,7 +721,7 @@ internal fun PowConnectSheet(modifier: Modifier = Modifier) {
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Text(
-                    text = homeText("Connection steps", "مراحل اتصال"),
+                    text = homeText("Connection steps", "مراحل اتصال برای  متصل شدن به سوپری سر کوچه 😛"),
                     color = UacColors.TextPrimary,
                     fontSize = 14.sp,
                     fontWeight = FontWeight.SemiBold,
