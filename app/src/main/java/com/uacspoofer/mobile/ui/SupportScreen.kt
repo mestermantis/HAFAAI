@@ -171,7 +171,7 @@ private fun SupportIntroCard() {
             Text(
                 homeText(
                     "Follow releases, ask questions and join the ♥ community.",
-                    "من بیشتر روستا هستم 1600 تا گوسفند دارم 173 تا گاو ابنو همون اول بگم من بلد نیستم ${supportLtr("♥")} با من در ارتباط باش.",
+                    "من بیشتر روستا هستم 1600 تا گوسفند دارم 173 تا گاو اینو همون اول بگم من بلد نیستم ${supportLtr("♥")} با من در ارتباط باش.",
                 ),
                 color = UacColors.TextSecondary,
                 fontSize = 11.5.sp,
