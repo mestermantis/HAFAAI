@@ -362,7 +362,7 @@ private fun DrawerHeader(compact: Boolean, engineMode: EngineMode) {
         Text(
             text = when {
                 engineMode.isTor -> "UAC TOR BRIDGE"
-                engineMode.isPow -> "UAC PoW"
+                engineMode.isPow -> "HAMID FATI"
                 engineMode.isDirect -> "UAC Direct"
                 else -> "UAC SNI Spoofer"
             },
@@ -374,7 +374,7 @@ private fun DrawerHeader(compact: Boolean, engineMode: EngineMode) {
         )
         Spacer(Modifier.height(if (compact) 1.dp else 3.dp))
         Text(
-            text = homeText("Secure network tools", "اینو فاطمه ساخته و برادرش"),
+            text = homeText("Secure network tools", "اینو فاطمه ساخته و شوهرش  آقا حمید"),
             color = DrawerMuted,
             fontSize = if (compact) 10.sp else 12.sp,
             fontWeight = FontWeight.Normal,
@@ -449,17 +449,17 @@ private fun DrawerNavItem(
                     item.label,
                     when (item.destination) {
                         DrawerDestination.HOME -> "خانه حمید و فاطی و سام"
-                        DrawerDestination.CONFIGS -> if (engineMode.isTor || engineMode.isPow) "انتخاب کشور" else "کانفیگ‌ها"
+                        DrawerDestination.CONFIGS -> if (engineMode.isTor || engineMode.isPow) "انتخاب کشور گوگولی" else "کانفیگ‌ها"
                         DrawerDestination.SNI_MAKER -> "ساخت کانفیگ"
                         DrawerDestination.ROUTE_SPEED_TEST -> "تست سرعت مسیر"
-                        DrawerDestination.LIVE_LOGS -> "لاگ‌ها"
-                        DrawerDestination.APP_BYPASS -> "عبور انتخابی برنامه‌ها"
+                        DrawerDestination.LIVE_LOGS -> "خطاهای تخمی"
+                        DrawerDestination.APP_BYPASS -> "عبور برنامه های کیری"
                         DrawerDestination.SETTINGS -> "تنظیمات کلی"
                         DrawerDestination.ADVANCED_SETTINGS -> "تنظیمات Eju"
                         DrawerDestination.POW_SETTINGS -> "تنظیمات HAFA"
                         DrawerDestination.TOR_SETTINGS -> "تنظیمات HF"
                         DrawerDestination.DIRECT_SETTINGS -> "تنظیمات Direct"
-                        DrawerDestination.SUPPORT -> "یاسین"
+                        DrawerDestination.SUPPORT -> "فاطمه"
                     },
                 ),
                 color = if (selected) DrawerText else Color(0xFFC2CEE0),
