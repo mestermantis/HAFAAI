@@ -193,9 +193,9 @@ internal class AppUpdateManager(context: Context) {
     }
 
     companion object {
-        internal const val REPOSITORY_URL = "https://github.com/mestermantis/HAFAUAC"
+        internal const val REPOSITORY_URL = "https://github.com/mestermantis/HAFAAI"
         internal const val RELEASES_URL = "$REPOSITORY_URL/releases"
-        private const val LATEST_RELEASE_API = "https://api.github.com/repos/mestermantis/HAFAUAC/releases/latest"
+        private const val LATEST_RELEASE_API = "https://api.github.com/repos/mestermantis/HAFAAI/releases/latest"
         private const val APK_MIME_TYPE = "application/vnd.android.package-archive"
         private const val PREFERENCES_NAME = "app_update_state"
         private const val KEY_PENDING_DOWNLOAD_ID = "pending_download_id"
