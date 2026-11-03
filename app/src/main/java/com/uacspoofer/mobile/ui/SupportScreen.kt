@@ -509,5 +509,5 @@ internal fun openExternalLink(context: Context, url: String) {
     }
 }
 
-private const val TELEGRAM_CHANNEL_URL = "https://t.me/UacSniSpoofer"
-private const val TELEGRAM_GROUP_URL = "https://t.me/UacSniSpooferGroup"
+private const val TELEGRAM_CHANNEL_URL = "https://t.me/v2rayFullprotocol"
+private const val TELEGRAM_GROUP_URL = "https://t.me/v2rayFullprotocol"
