@@ -92,7 +92,7 @@ internal fun SupportScreen(
             header = {
                 ToolPageHeader(
                     title = homeText("Support", "پشتیبانی"),
-                    subtitle = homeText("Community, updates and project links", "من یاسین هستم سازنده این برنامه"),
+                    subtitle = homeText("Community, updates and project links", "من برادر زن حمید هستم بلد نیستم هیچی"),
                     icon = Icons.Outlined.SupportAgent,
                     accent = SupportPurple,
                     onMenuClick = onMenuClick,
@@ -170,8 +170,8 @@ private fun SupportIntroCard() {
             Spacer(Modifier.height(3.dp))
             Text(
                 homeText(
-                    "Follow releases, ask questions and join the UAC community.",
-                    "من بیشتر روستا هستم 1600 تا گوسفند دارم ${supportLtr("UAC")} با من در ارتباط باش.",
+                    "Follow releases, ask questions and join the ♥ community.",
+                    "من بیشتر روستا هستم 1600 تا گوسفند دارم 173 تا گاو ابنو همون اول بگم من بلد نیستم ${supportLtr("♥")} با من در ارتباط باش.",
                 ),
                 color = UacColors.TextSecondary,
                 fontSize = 11.5.sp,
