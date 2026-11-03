@@ -1,0 +1,63 @@
+
+name: Build UAC Android APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v5
+
+      - name: Setup Java 17
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v4
+        with:
+          packages: 'platform-tools'
+
+      - name: Install Android SDK and NDK
+        shell: pwsh
+        run: |
+          sdkmanager --install "platforms;android-35" "build-tools;35.0.0" "ndk;26.3.11579264" "cmake;3.22.1"
+
+      - name: Install Ninja
+        shell: pwsh
+        run: |
+          choco install ninja --yes --no-progress
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-linux-android,armv7-linux-androideabi,x86_64-linux-android
+
+      - name: Install cargo-ndk
+        shell: pwsh
+        run: cargo install cargo-ndk --locked
+
+      - name: Build Universal APK
+        shell: pwsh
+        run: |
+          .\gradlew.bat :app:assembleDebug --stacktrace --no-daemon
+
+      - name: Upload APK files
+        uses: actions/upload-artifact@v4
+        with:
+          name: UAC-2.0.9-APK
+          path: app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
+          retention-days: 14
