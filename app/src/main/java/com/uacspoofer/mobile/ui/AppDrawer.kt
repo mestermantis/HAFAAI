@@ -140,10 +140,10 @@ private fun drawerItemsFor(mode: EngineMode): List<DrawerItem> = buildList {
     add(DrawerItem(DrawerDestination.APP_BYPASS, "App Bypass", Icons.Outlined.Block))
     add(DrawerItem(DrawerDestination.SETTINGS, "General settings", Icons.Outlined.Settings))
     when {
-        mode.isPow -> add(DrawerItem(DrawerDestination.POW_SETTINGS, "HAFA settings", Icons.Outlined.Tune))
-        mode.isTor -> add(DrawerItem(DrawerDestination.TOR_SETTINGS, "HF settings", Icons.Outlined.Tune))
+        mode.isPow -> add(DrawerItem(DrawerDestination.POW_SETTINGS, "PoW settings", Icons.Outlined.Tune))
+        mode.isTor -> add(DrawerItem(DrawerDestination.TOR_SETTINGS, "Tor settings", Icons.Outlined.Tune))
         mode.isDirect -> add(DrawerItem(DrawerDestination.DIRECT_SETTINGS, "Direct settings", Icons.Outlined.Tune))
-        else -> add(DrawerItem(DrawerDestination.ADVANCED_SETTINGS, "Eju settings", Icons.Outlined.Tune))
+        else -> add(DrawerItem(DrawerDestination.ADVANCED_SETTINGS, "Xray settings", Icons.Outlined.Tune))
     }
     // Support is always the last item, for every engine.
     add(DrawerItem(DrawerDestination.SUPPORT, "Support", Icons.Outlined.SupportAgent))
@@ -353,7 +353,7 @@ private fun DrawerHeader(compact: Boolean, engineMode: EngineMode) {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Icon(
-            ImageVector = Icons.Outlined.VerifiedUser,
+            imageVector = Icons.Outlined.VerifiedUser,
             contentDescription = null,
             tint = DrawerBlue,
             modifier = Modifier.size(if (compact) 28.dp else 38.dp),
@@ -361,8 +361,8 @@ private fun DrawerHeader(compact: Boolean, engineMode: EngineMode) {
         Spacer(Modifier.height(if (compact) 4.dp else 9.dp))
         Text(
             text = when {
-                engineMode.isTor -> "HAMID HF SAMI"
-                engineMode.isPow -> "HAFA"
+                engineMode.isTor -> "UAC TOR BRIDGE"
+                engineMode.isPow -> "UAC PoW"
                 engineMode.isDirect -> "UAC Direct"
                 else -> "UAC SNI Spoofer"
             },
@@ -438,7 +438,7 @@ private fun DrawerNavItem(
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Icon(
-                ImageVector = item.icon,
+                imageVector = item.icon,
                 contentDescription = null,
                 tint = if (selected) Color(0xFFAAD7FF) else Color(0xFF95A9C4),
                 modifier = Modifier.size(if (compact) 18.dp else 22.dp),
@@ -512,7 +512,7 @@ private fun DrawerSupportCard(
             contentAlignment = Alignment.Center,
         ) {
             Icon(
-                ImageVector = Icons.Outlined.StarOutline,
+                imageVector = Icons.Outlined.StarOutline,
                 contentDescription = null,
                 tint = Color(0xFFAAD7FF),
                 modifier = Modifier.size(if (compact) 16.dp else 18.dp),
@@ -521,7 +521,7 @@ private fun DrawerSupportCard(
         Spacer(Modifier.width(if (compact) 10.dp else 12.dp))
         Column(modifier = Modifier.weight(1f)) {
             Text(
-                text = homeText("Enjoying the app?", "برای همه رفتگان صلوات"),
+                text = homeText("Enjoying the app?", "یادش بخیر یاهو مسنجر فاطی"),
                 color = DrawerText,
                 fontSize = if (compact) 12.5.sp else 13.5.sp,
                 fontWeight = FontWeight.Medium,
@@ -541,7 +541,7 @@ private fun DrawerSupportCard(
         }
         Spacer(Modifier.width(6.dp))
         Icon(
-            ImageVector = if (persian) Icons.AutoMirrored.Outlined.KeyboardArrowLeft else Icons.AutoMirrored.Outlined.KeyboardArrowRight,
+            imageVector = if (persian) Icons.AutoMirrored.Outlined.KeyboardArrowLeft else Icons.AutoMirrored.Outlined.KeyboardArrowRight,
             contentDescription = null,
             tint = DrawerMuted,
             modifier = Modifier.size(if (compact) 18.dp else 20.dp),
